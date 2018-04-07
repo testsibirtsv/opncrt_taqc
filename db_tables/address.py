@@ -40,3 +40,24 @@ class Address(BASE):
         self.postcode = postcode
         self.country_id = country_id
         self.zone_id = zone_id
+
+    def __repr__(self):
+        return f"{self.firstname}, " \
+               f"{self.lastname}, " \
+               f"{self.company}, " \
+               f"{self.address_1}, " \
+               f"{self.address_2}, " \
+               f"{self.city}, " \
+               f"{self.postcode}, " \
+               f"{self.country_id}, " \
+               f"{self.zone_id}"
+
+    def __eq__(self, other):
+        return (self.firstname == other.firstname and
+                self.lastname == other.lastname and
+                self.company == other.company and
+                self.address_1 == other.address_1 and
+                self.address_2 == other.address_2 and
+                self.city == other.city and
+                self.country_id == other.country_id and
+                self.zone_id == other.zone_id)

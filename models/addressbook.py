@@ -3,6 +3,7 @@ Contains AddressBook class that provides help with
 interacting with the Address Book page and Add Address form elements.
 """
 
+
 # pylint: disable=too-few-public-methods
 class AddressBook:
     """

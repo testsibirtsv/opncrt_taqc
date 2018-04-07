@@ -15,7 +15,8 @@ class Customer(BASE):
     email = Column(String, unique=True)
     telephone = Column(String)
 
-    def __init__(self, firstname, lastname, email, telephone):
+    def __init__(self, customer_id, firstname, lastname, email, telephone):
+        self.customer_id = customer_id
         self.firstname = firstname
         self.lastname = lastname
         self.email = email
