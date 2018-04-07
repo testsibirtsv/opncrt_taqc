@@ -6,4 +6,4 @@ install:
   - pip install -r requirements.txt
 
 script:
-  - pylint --rcfile=.pylintrc db elements helpers locators models pages
+  - pylint --rcfile=.pylintrc db_tables elements helpers locators models pages
