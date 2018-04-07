@@ -42,14 +42,14 @@ class Address(BASE):
         self.zone_id = zone_id
 
     def __repr__(self):
-        return f"{self.firstname}, " \
-               f"{self.lastname}, " \
-               f"{self.company}, " \
-               f"{self.address_1}, " \
-               f"{self.address_2}, " \
-               f"{self.city}, " \
-               f"{self.postcode}, " \
-               f"{self.country_id}, " \
+        return f"{self.firstname} " \
+               f"{self.lastname} " \
+               f"{self.company} " \
+               f"{self.address_1} " \
+               f"{self.address_2} " \
+               f"{self.city} " \
+               f"{self.postcode} " \
+               f"{self.country_id} " \
                f"{self.zone_id}"
 
     def __eq__(self, other):

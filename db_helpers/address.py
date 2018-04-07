@@ -2,34 +2,25 @@ from db_tables.country import Country
 from db_tables.zone import Zone
 from db_tables.address import Address
 from db_tables.base import session_factory
+from models.addressbook import AddressBook
 
 
-def get_country_by_id(id):
+def get_address_by_id(user):
     session = session_factory()
-    query = session.query(Country.name)
-    country = query.filter(Country.country_id == id)
+    query = session.query(Address)
+    address = query.filter(Address.address_id == user.address_id).first()
+    zone = session.query(Zone.name).filter(Zone.zone_id == address.zone_id).first()
+    country = session.query(Country.name).filter(Country.country_id == address.country_id).first()
     session.close()
-    return country.all()
+    return AddressBook(address_id=address.address_id,
+                       first_name=address.firstname,
+                       last_name=address.lastname,
+                       company=address.company,
+                       address_1=address.address_1,
+                       address_2=address.address_2,
+                       city=address.city,
+                       country=country[0],
+                       region_state=zone[0])
 
 
-def get_zone_by_id(id):
-    session = session_factory()
-    query = session.query(Zone.name)
-    zone = query.filter(Zone.zone_id == id)
-    session.close()
-    return zone.all()
-
-
-def get_zone_by_name(name):
-    session = session_factory()
-    zone = session.query(Address.zone_id).filter(Zone.name == name)
-    session.close()
-    return zone.first()
-
-
-def get_country_by_name(name):
-    session = session_factory()
-    query = session.query(Address.zone_id)
-    country = query.filter(Zone.name == name)
-    session.close()
-    return country.first()
+print(get_address_by_id(AddressBook(address_id=64)))
