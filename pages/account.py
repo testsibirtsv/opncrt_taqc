@@ -3,6 +3,8 @@ Account Page comes here.
 """
 from locators.account import AccountLocators
 from .base import BasePage
+from .addressbook import AddressBookPage
+from .editaccount import EditAccountPage
 
 
 class AccountPage(BasePage):
@@ -10,19 +12,19 @@ class AccountPage(BasePage):
     Account Page methods come here.
     """
 
-    def open_address_book_page(self):
+    def goto_address_book(self):
         """
         TODO
         """
-        self.driver.find_element(*AccountLocators.ADDRESS_BOOK_LINK)
-        return self
+        self.driver.find_element(*AccountLocators.ADDRESS_BOOK_LINK).click()
+        return AddressBookPage(self.driver)
 
-    def open_user_edit_page(self):
+    def goto_edit_account(self):
         """
         TODO
         """
-        self.driver.find_element(*AccountLocators.EDIT_ACCOUNT_LINK)
-        return self
+        self.driver.find_element(*AccountLocators.EDIT_ACCOUNT_LINK).click()
+        return EditAccountPage(self.driver)
 
     def goto_homepage(self):
         """
