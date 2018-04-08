@@ -21,4 +21,4 @@ class AddAddressLocators(BasePageLocators):
     COUNTRY_OPTION = (By.ID, "input-country")
     REGION_OPTION = (By.ID, "input-zone")
 
-    CONTINUE_BUTTON = (By.XPATH, "//form[@class='form-horizontal']/div/div[2]/input")
+    BTN_CONTINUE = (By.XPATH, "//form[@class='form-horizontal']/div/div[2]/input")

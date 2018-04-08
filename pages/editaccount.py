@@ -5,7 +5,7 @@ from locators.editaccount import EditAccountLocators
 class EditAccountPage(BasePage):
 
     @staticmethod
-    def change_data_in_text_fields(form_textfield, data):
+    def _change_data_in_text_fields(form_textfield, data):
         """
         Enter the data in the textfield.
 
@@ -23,13 +23,13 @@ class EditAccountPage(BasePage):
 
         :param user_data: data entered in the textfield.
         """
-        self.change_data_in_text_fields(
+        self._change_data_in_text_fields(
             self.driver.find_element(*EditAccountLocators.FIRSTNAME_FIELD), user_data.first_name)
-        self.change_data_in_text_fields(
+        self._change_data_in_text_fields(
             self.driver.find_element(*EditAccountLocators.LASTNAME_FIELD), user_data.last_name)
-        self.change_data_in_text_fields(
+        self._change_data_in_text_fields(
             self.driver.find_element(*EditAccountLocators.EMAIL_FIELD), user_data.email)
-        self.change_data_in_text_fields(
+        self._change_data_in_text_fields(
             self.driver.find_element(*EditAccountLocators.TELEPHONE_FIELD), user_data.telephone)
         self.driver.find_element(*EditAccountLocators.BTN_CONTINUE).click()
         return self

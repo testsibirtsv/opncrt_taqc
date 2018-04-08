@@ -1,4 +1,5 @@
 from .base import BasePage
+from .addaddress import AddAddressPage
 from models.addressbook import AddressBook
 from locators.addressbook import AddressBookLocators
 import re
@@ -20,16 +21,16 @@ class AddressBookPage(BasePage):
         """
         return len(self.driver.find_elements(*AddressBookLocators.BTN_EDIT_LIST))
 
-    def open_edit_page_by_position(self, position):
+    def goto_editaddress_page_by_index(self, index):
         """
         Edit address book entry from the Address Book page
         by it's positional index.
 
-        :param position: positional index of address entry
+        :param index: positional index of address entry
         in list of addresses on the Address Book page.
         """
-        self.driver.find_elements(*AddressBookLocators.BTN_EDIT_LIST)[position].click()
-        return self
+        self.driver.find_elements(*AddressBookLocators.BTN_EDIT_LIST)[index].click()
+        return AddAddressPage(self.driver)
 
     def delete_record_by_index(self, index):
         """
@@ -42,13 +43,13 @@ class AddressBookPage(BasePage):
         self.driver.find_elements(*AddressBookLocators.BTN_DELETE_LIST)[index].click()
         return self
 
-    def open_form_page(self):
+    def goto_addaddres_page(self):
         """
         Open Add Address form o
         n Address Book page.
         """
         self.driver.find_element(*AddressBookLocators.BTN_NEW_ADDRESS).click()
-        return self
+        return AddAddressPage(self.driver)
 
     def get_content_info_from_list(self):
         """
