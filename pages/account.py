@@ -4,6 +4,7 @@ Account Page comes here.
 from locators.account import AccountLocators
 from .base import BasePage
 from .addressbook import AddressBookPage
+from .editaccount import EditAccountPage
 
 
 class AccountPage(BasePage):
@@ -18,12 +19,12 @@ class AccountPage(BasePage):
         self.driver.find_element(*AccountLocators.ADDRESS_BOOK_LINK).click()
         return AddressBookPage(self.driver)
 
-    def open_user_edit_page(self):
+    def goto_editaccount_page(self):
         """
         TODO
         """
         self.driver.find_element(*AccountLocators.EDIT_ACCOUNT_LINK).click()
-        return self
+        return EditAccountPage(self.driver)
 
     def goto_homepage(self):
         """
