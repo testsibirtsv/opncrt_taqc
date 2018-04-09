@@ -1,10 +1,11 @@
 """
 Contains the Zone class for interacting with the database.
 """
-from .base import BASE
 from sqlalchemy import Column, String, Integer
+from .base import BASE
 
 
+# pylint: disable=too-few-public-methods
 class Zone(BASE):
     """
     Representing the oc_zone table from the opencart database.
@@ -14,6 +15,7 @@ class Zone(BASE):
     zone_id = Column(Integer, primary_key=True)
     name = Column(String)
 
+    # pylint: disable=duplicate-code
     def __init__(self, name):
         self.name = name
 

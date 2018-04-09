@@ -1,10 +1,11 @@
 """
 Contains the EditAccountPage class for interacting with the EditAccount page.
 """
-from .base import BasePage
 from locators.editaccount import EditAccountLocators
+from .base import BasePage
 
 
+# pylint: disable=too-few-public-methods
 class EditAccountPage(BasePage):
     """
     Contains methods for interacting with the EditAccount page.

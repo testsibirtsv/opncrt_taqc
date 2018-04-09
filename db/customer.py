@@ -1,10 +1,11 @@
 """
 Contains the Customer class for interacting with the database.
 """
-from .base import BASE
 from sqlalchemy import Column, String, Integer
+from .base import BASE
 
 
+# pylint: disable=too-many-arguments
 # pylint: disable=too-few-public-methods
 class Customer(BASE):
     """

@@ -1,10 +1,13 @@
 """
 Contains the Address class for interacting with the database.
 """
-from .base import BASE
 from sqlalchemy import Column, String, Integer
+from .base import BASE
 
 
+# pylint: disable=too-many-instance-attributes
+# pylint: disable=too-many-arguments
+# pylint: disable=too-few-public-methods
 class Address(BASE):
     """
     Representing the oc_address table from the opencart database.

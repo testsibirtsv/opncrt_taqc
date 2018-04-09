@@ -1,10 +1,10 @@
 """
 Contains the AddAddressPage class for interacting with the AddAddress page.
 """
-from .base import BasePage
 from selenium.webdriver.support.ui import Select
 from locators.addaddress import AddAddressLocators
 from models.addressbook import AddressBook
+from .base import BasePage
 
 
 class AddAddressPage(BasePage):

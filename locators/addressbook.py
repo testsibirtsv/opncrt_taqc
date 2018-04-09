@@ -5,6 +5,7 @@ from selenium.webdriver.common.by import By
 from .base import BasePageLocators
 
 
+# pylint: disable=too-few-public-methods
 class AddressBookLocators(BasePageLocators):
     """
     Contains constants with AddressBook page element locators.

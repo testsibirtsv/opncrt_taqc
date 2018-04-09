@@ -1,10 +1,11 @@
 """
 Contains the Country class for interacting with the database.
 """
-from .base import BASE
 from sqlalchemy import Column, String, Integer
+from .base import BASE
 
 
+# pylint: disable=too-few-public-methods
 class Country(BASE):
     """
     Representing the oc_country table from the opencart database.

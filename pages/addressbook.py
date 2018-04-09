@@ -1,11 +1,11 @@
 """
 Contains the AddressBookPage class for interacting with the AddressBook page.
 """
-from .base import BasePage
-from .addaddress import AddAddressPage
+import re
 from models.addressbook import AddressBook
 from locators.addressbook import AddressBookLocators
-import re
+from .base import BasePage
+from .addaddress import AddAddressPage
 
 
 class AddressBookPage(BasePage):

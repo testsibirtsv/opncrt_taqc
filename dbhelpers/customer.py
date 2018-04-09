@@ -7,6 +7,7 @@ from db.base import session_factory
 from models.personaldetails import PersonalDetails
 
 
+# pylint: disable=too-few-public-methods
 class DbCustomer:
     """
     Contains methods for obtaining information from oc_customer table.
