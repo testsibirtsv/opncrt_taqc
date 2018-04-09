@@ -1,9 +1,15 @@
+"""
+Contains the AddAddressPage class for interacting with the AddAddress page.
+"""
 from .base import BasePage
 from selenium.webdriver.support.ui import Select
 from locators.addaddress import AddAddressLocators
 
 
 class AddAddressPage(BasePage):
+    """
+    Contains methods for interacting with the AddAddress page.
+    """
 
     def fill_address_form(self, address):
         """
@@ -58,19 +64,49 @@ class AddAddressPage(BasePage):
             field_name.send_keys(value)
 
     def get_firstname_error(self):
+        """
+        Get an error message from the 'First Name' field.
+
+        :return: error message.
+        """
         return self.driver.find_element(*AddAddressLocators.FIRSTNAME_ERROR).text
 
     def get_lastname_error(self):
+        """
+        Get an error message from the 'Last Name' field.
+
+        :return: error message.
+        """
         return self.driver.find_element(*AddAddressLocators.LASTNAME_ERROR).text
 
     def get_address1_error(self):
+        """
+        Get an error message from the 'Address 1' field.
+
+        :return: error message.
+        """
         return self.driver.find_element(*AddAddressLocators.ADDRESS1_ERROR).text
 
     def get_city_error(self):
+        """
+        Get an error message from the 'City' field.
+
+        :return: error message.
+        """
         return self.driver.find_element(*AddAddressLocators.CITY_ERROR).text
 
     def get_postcode_error(self):
+        """
+        Get an error message from the 'Post Code' field.
+
+        :return: error message.
+        """
         return self.driver.find_element(*AddAddressLocators.POSTCODE_ERROR).text
 
     def get_region_error(self):
+        """
+        Get an error message from the 'Region / State' drop down list option.
+
+        :return: error message.
+        """
         return self.driver.find_element(*AddAddressLocators.REGION_ERROR).text

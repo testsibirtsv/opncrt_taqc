@@ -14,14 +14,14 @@ class AccountPage(BasePage):
 
     def goto_addressbook_page(self):
         """
-        TODO
+        Redirect to AddressBook page.
         """
         self.driver.find_element(*AccountLocators.ADDRESS_BOOK_LINK).click()
         return AddressBookPage(self.driver)
 
     def goto_editaccount_page(self):
         """
-        TODO
+        Redirect to EditAccount page.
         """
         self.driver.find_element(*AccountLocators.EDIT_ACCOUNT_LINK).click()
         return EditAccountPage(self.driver)

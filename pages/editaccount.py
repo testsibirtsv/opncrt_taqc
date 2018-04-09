@@ -1,8 +1,14 @@
+"""
+Contains the EditAccountPage class for interacting with the EditAccount page.
+"""
 from .base import BasePage
 from locators.editaccount import EditAccountLocators
 
 
 class EditAccountPage(BasePage):
+    """
+    Contains methods for interacting with the EditAccount page.
+    """
 
     @staticmethod
     def _change_data_in_text_fields(form_textfield, data):

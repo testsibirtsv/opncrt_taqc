@@ -1,3 +1,6 @@
+"""
+Contains the AddressBookPage class for interacting with the AddressBook page.
+"""
 from .base import BasePage
 from .addaddress import AddAddressPage
 from models.addressbook import AddressBook
@@ -6,6 +9,9 @@ import re
 
 
 class AddressBookPage(BasePage):
+    """
+    Contains methods for interacting with the AddressBook page.
+    """
 
     def get_alert_message_text(self):
         """
