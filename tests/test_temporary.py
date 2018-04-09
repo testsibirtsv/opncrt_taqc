@@ -1,8 +1,8 @@
 from models.personaldetails import PersonalDetails
 from models.addressbook import AddressBook
 from selenium import webdriver
-
 from pages.home import HomePage
+from pages.addressbook import AddressBookPage
 
 driver = webdriver.Chrome()
 base_url = 'http://localhost/opencart'
@@ -53,3 +53,5 @@ def test_editaddress():
         .goto_addressbook_page()\
         .goto_editaddress_page_by_index(0)\
         .fill_address_form(address_data)
+    print(AddressBookPage(driver)
+          .get_alert_message_text())
