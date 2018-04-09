@@ -3,15 +3,14 @@ from models.addressbook import AddressBook
 from selenium import webdriver
 from pages.home import HomePage
 from pages.addressbook import AddressBookPage
+from dbhelpers.customer import DbCustomer
+import pytest
 
 driver = webdriver.Chrome()
 base_url = 'http://localhost/opencart'
 driver.get(base_url)
 
-editaccount_data = PersonalDetails(first_name="Serhii",
-                                   last_name="TestLastName",
-                                   email="taqc296@gmail.com",
-                                   telephone="12345")
+
 
 address_data = AddressBook(first_name="edited_firstname",
                            last_name="edited_lastname",
@@ -35,6 +34,10 @@ def test_addressbook_delete():
 
 
 def test_editaccount():
+    editaccount_data = PersonalDetails(first_name="Serhii",
+                                       last_name="TestLastName",
+                                       email="taqc296@gmail.com",
+                                       telephone="12345")
     HomePage(driver)\
         .goto_login()\
         .input_email('taqc296@gmail.com')\
@@ -42,6 +45,7 @@ def test_editaccount():
         .login()\
         .goto_editaccount_page()\
         .fill_edit_account_form(editaccount_data)
+    assert editaccount_data == DbCustomer.get_from_db_by_email(editaccount_data)
 
 
 def test_editaddress():

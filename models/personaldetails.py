@@ -27,7 +27,7 @@ class PersonalDetails:
                                     self.telephone)
 
     def __eq__(self, other):
-        return self.first_name == other.firstname \
-               and self.last_name == other.lastname \
+        return self.first_name == other.first_name \
+               and self.last_name == other.last_name \
                and self.email == other.email \
                and self.telephone == other.telephone

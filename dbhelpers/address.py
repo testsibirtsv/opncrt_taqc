@@ -26,4 +26,4 @@ class DbAddress:
                            region_state=zone[0])
 
 
-print(DbAddress.get_address_by_id(AddressBook(address_id=67)))
+# print(DbAddress.get_address_by_id(AddressBook(address_id=67)))
