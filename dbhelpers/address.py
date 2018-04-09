@@ -41,6 +41,3 @@ class DbAddress:
                            city=address.city,
                            country=country[0],
                            region_state=zone[0])
-
-
-# print(DbAddress.get_address_by_id(AddressBook(address_id=67)))

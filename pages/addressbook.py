@@ -95,35 +95,3 @@ class AddressBookPage(BasePage):
         info = self.driver.find_elements(*AddressBookLocators.CONTENT_LIST)[index].text
         content = re.sub(r'\s', '', info)
         return AddressBook(content=content)
-
-    #
-    #
-    #
-    #
-    #
-    #
-    # def create(self, address):
-    #     """
-    #     Open Address Book page, then open and fill Add Address form
-    #     and submit creation.
-    #
-    #     :param address: object with parameters for fields in Add Address form.
-    #     """
-    #     self.open_address_book_page()
-    #     self.open_form_page()
-    #     self.fill_address_form(address)
-    #     self.get_continue_button().click()
-    #
-    # def edit_record_by_index(self, updated_values, index: int):
-    #     """
-    #     Open Address Book page, then open already existing address entry,
-    #     fill Add Address form with new data and submit changes.
-    #
-    #     :param updated_values: object with parameters for fields in Add Address form.
-    #     :param index: position of address in list on Address Book page.
-    #     """
-    #
-    #     self.open_address_book_page()
-    #     self.open_edit_page_by_position(index)
-    #     self.fill_address_form(updated_values)
-    #     self.get_continue_button_from_form().click()

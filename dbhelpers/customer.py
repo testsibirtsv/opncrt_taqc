@@ -31,6 +31,3 @@ class DbCustomer:
                                last_name=customer.lastname,
                                email=customer.email,
                                telephone=customer.telephone)
-
-
-# print(DbCustomer.get_from_db_by_email(PersonalDetails(email="taqc296@gmail.com")))
