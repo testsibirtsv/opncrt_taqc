@@ -3,6 +3,7 @@ Contains PersonalDetails class that provides help with
 interacting with the Edit Account page.
 """
 
+
 # pylint: disable=too-few-public-methods
 class PersonalDetails:
     """

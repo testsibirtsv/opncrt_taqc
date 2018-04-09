@@ -1,5 +1,5 @@
 """
-TODO
+Contains the Customer class for interacting with the database.
 """
 from .base import BASE
 from sqlalchemy import Column, String, Integer
@@ -8,7 +8,7 @@ from sqlalchemy import Column, String, Integer
 # pylint: disable=too-few-public-methods
 class Customer(BASE):
     """
-    TODO
+    Representing the oc_customer table from the opencart database.
     """
     __tablename__ = 'oc_customer'
 

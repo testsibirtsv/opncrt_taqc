@@ -1,8 +1,14 @@
+"""
+Contains EditAccountLocators class with EditAccount page element locators.
+"""
 from selenium.webdriver.common.by import By
 from .base import BasePageLocators
 
 
 class EditAccountLocators(BasePageLocators):
+    """
+    Contains constants with EditAccount page element locators.
+    """
 
     FIRSTNAME_FIELD = (By.ID, "input-firstname")
     LASTNAME_FIELD = (By.ID, "input-lastname")

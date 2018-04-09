@@ -1,3 +1,7 @@
+"""
+Contains DbAddress class for interacting
+with a table oc_address from opencart database.
+"""
 from db.country import Country
 from db.zone import Zone
 from db.address import Address
@@ -6,9 +10,20 @@ from models.addressbook import AddressBook
 
 
 class DbAddress:
+    """
+    Contains methods for obtaining information from oc_address table.
+    """
 
     @staticmethod
     def get_address_by_id(user):
+        """
+        Receives address_id data from the AddressBook object,
+        on their basis searches for records in the oc_address table
+        and returns them as an AddressBook object.
+
+        :param user: object AddressBook with address_id.
+        :return: object AddressBook with data from oc_address table.
+        """
         session = session_factory()
         query = session.query(Address)
         address = query.filter(Address.address_id == user.address_id).first()

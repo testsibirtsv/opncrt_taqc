@@ -1,8 +1,14 @@
+"""
+Contains the Country class for interacting with the database.
+"""
 from .base import BASE
 from sqlalchemy import Column, String, Integer
 
 
 class Country(BASE):
+    """
+    Representing the oc_country table from the opencart database.
+    """
     __tablename__ = 'oc_country'
 
     country_id = Column(Integer, primary_key=True)

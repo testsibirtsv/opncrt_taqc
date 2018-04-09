@@ -1,8 +1,14 @@
+"""
+Contains AddressBookLocators class with AddressBook page element locators.
+"""
 from selenium.webdriver.common.by import By
 from .base import BasePageLocators
 
 
 class AddressBookLocators(BasePageLocators):
+    """
+    Contains constants with AddressBook page element locators.
+    """
 
     BTN_EDIT = (By.XPATH, "//td[@class='text-right']//a[.='Edit']")
     BTN_EDIT_LIST = (By.XPATH, "//div[@class='table-responsive']//a[.='Edit']")

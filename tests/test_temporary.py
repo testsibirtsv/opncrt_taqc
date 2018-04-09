@@ -4,12 +4,10 @@ from selenium import webdriver
 from pages.home import HomePage
 from pages.addressbook import AddressBookPage
 from dbhelpers.customer import DbCustomer
-import pytest
 
 driver = webdriver.Chrome()
 base_url = 'http://localhost/opencart'
 driver.get(base_url)
-
 
 
 address_data = AddressBook(first_name="edited_firstname",

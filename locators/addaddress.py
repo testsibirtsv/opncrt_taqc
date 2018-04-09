@@ -1,8 +1,14 @@
+"""
+Contains AddAddressLocators class with AddAddress page element locators.
+"""
 from selenium.webdriver.common.by import By
 from .base import BasePageLocators
 
 
 class AddAddressLocators(BasePageLocators):
+    """
+    Contains constants with AddAddress page element locators.
+    """
 
     FIRSTNAME_ERROR = (By.XPATH, "//form[@class='form-horizontal']/fieldset/div[1]/div/div")
     LASTNAME_ERROR = (By.XPATH, "//form[@class='form-horizontal']/fieldset/div[2]/div/div")
@@ -10,7 +16,6 @@ class AddAddressLocators(BasePageLocators):
     CITY_ERROR = (By.XPATH, "//form[@class='form-horizontal']/fieldset/div[6]/div/div")
     POSTCODE_ERROR = (By.XPATH, "//form[@class='form-horizontal']/fieldset/div[7]/div/div")
     REGION_ERROR = (By.XPATH, "//form[@class='form-horizontal']/fieldset/div[9]/div/div")
-
     FIRSTNAME_FIELD = (By.ID, "input-firstname")
     LASTNAME_FIELD = (By.ID, "input-lastname")
     COMPANY_FIELD = (By.ID, "input-company")
@@ -20,5 +25,4 @@ class AddAddressLocators(BasePageLocators):
     POSTCODE_FIELD = (By.ID, "input-postcode")
     COUNTRY_OPTION = (By.ID, "input-country")
     REGION_OPTION = (By.ID, "input-zone")
-
     BTN_CONTINUE = (By.XPATH, "//form[@class='form-horizontal']/div/div[2]/input")
