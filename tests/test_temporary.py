@@ -53,6 +53,7 @@ def test_editaddress():
         .input_password('root') \
         .login()\
         .goto_addressbook_page()\
+        .some_check()\
         .goto_editaddress_page_by_index(0)\
         .fill_address_form(address_data)
     print(AddressBookPage(driver)

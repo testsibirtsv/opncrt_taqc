@@ -15,7 +15,7 @@ class DbAddress:
     """
 
     @staticmethod
-    def get_address_by_id(user):
+    def get_address_by_id(user: AddressBook) -> AddressBook:
         """
         Receives address_id data from the AddressBook object,
         on their basis searches for records in the oc_address table

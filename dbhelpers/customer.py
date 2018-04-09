@@ -13,7 +13,7 @@ class DbCustomer:
     """
 
     @staticmethod
-    def get_from_db_by_email(user):
+    def get_from_db_by_email(user: PersonalDetails) -> PersonalDetails:
         """
         Receives email data from the PersonalDetails object,
         on their basis searches for records in the oc_customer table

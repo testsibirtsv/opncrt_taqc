@@ -13,7 +13,7 @@ class AddressBookPage(BasePage):
     Contains methods for interacting with the AddressBook page.
     """
 
-    def get_alert_message_text(self):
+    def get_alert_message_text(self) -> str:
         """
         Receive a message from the address book after adding,
         editing or deleting a record.
@@ -85,7 +85,7 @@ class AddressBookPage(BasePage):
         content = re.sub(r'\s', '', "".join(info_from_object))
         return AddressBook(content=content)
 
-    def get_content_info_by_index(self, index):
+    def get_content_info_by_index(self, index: int) -> AddressBook:
         """
         Get text from address record  by index in table on the Address Book page,
         filter and convert it into object.
