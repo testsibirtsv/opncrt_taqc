@@ -29,6 +29,7 @@ class EditAccountPage(BasePage):
         Change user data in the Edit Account form.
 
         :param user_data: data entered in the textfield.
+        :return: self object.
         """
         self._change_data_in_text_fields(
             self.driver.find_element(*EditAccountLocators.FIRSTNAME_FIELD), user_data.first_name)

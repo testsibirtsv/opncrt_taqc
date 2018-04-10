@@ -17,6 +17,8 @@ class AddressBookPage(BasePage):
         """
         Receive a message from the address book after adding,
         editing or deleting a record.
+
+        :return: informal text message.
         """
         return self.driver.find_element(*AddressBookLocators.ALERT_MESSAGE).text
 
@@ -24,6 +26,7 @@ class AddressBookPage(BasePage):
         """
         Count the number of address records on the Address Book page.
 
+        :return: count of address book records.
         """
         return len(self.driver.find_elements(*AddressBookLocators.BTN_EDIT_LIST))
 
@@ -34,6 +37,7 @@ class AddressBookPage(BasePage):
 
         :param index: positional index of address entry
         in list of addresses on the Address Book page.
+        :return: AddAddressPage.
         """
         self.driver.find_elements(*AddressBookLocators.BTN_EDIT_LIST)[index].click()
         return AddAddressPage(self.driver)
@@ -45,14 +49,16 @@ class AddressBookPage(BasePage):
 
         :param index: positional index of address entry
         in list of addresses on Address Book page.
+        :return: self object.
         """
         self.driver.find_elements(*AddressBookLocators.BTN_DELETE_LIST)[index].click()
         return self
 
     def goto_addaddres_page(self):
         """
-        Open Add Address form o
-        n Address Book page.
+        Open Add Address form on Address Book page.
+
+        :return: AddAddressPage.
         """
         self.driver.find_element(*AddressBookLocators.BTN_NEW_ADDRESS).click()
         return AddAddressPage(self.driver)
@@ -62,7 +68,7 @@ class AddressBookPage(BasePage):
         Get text of each individual address record in table on the Address Book page,
         filter and convert it into object, append them to list and return it.
 
-        :return: list of objects.
+        :return: list of AddressBook objects.
         """
         address_list = []
         for line in self.driver.find_elements(*AddressBookLocators.CONTENT_LIST):
@@ -76,7 +82,7 @@ class AddressBookPage(BasePage):
         Get text from object, filter and convert it into another object.
 
         :param address_obj: object that we used to create/edit Add Address form.
-        :return: object with filtered text.
+        :return: AddressBook object with filtered text.
         """
         info_from_object = []
         for attr in address_obj.__dict__.items():
@@ -90,7 +96,7 @@ class AddressBookPage(BasePage):
         Get text from address record  by index in table on the Address Book page,
         filter and convert it into object.
 
-        :return: object.
+        :return: AddressBook object.
         """
         info = self.driver.find_elements(*AddressBookLocators.CONTENT_LIST)[index].text
         content = re.sub(r'\s', '', info)

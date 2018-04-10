@@ -17,6 +17,7 @@ class AddAddressPage(BasePage):
         Fill fields with data in Add Address form.
 
         :param address: object with parameters for fields.
+        :return: self object.
         """
         self._change_text_field_data(
             self.driver.find_element(*AddAddressLocators.FIRSTNAME_FIELD), address.first_name)
